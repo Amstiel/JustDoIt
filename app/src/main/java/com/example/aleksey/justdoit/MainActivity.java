@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ListView lv;
     String message;
     AlertDialog.Builder alert;
+    AlertDialog.Builder alert1;
     TextView tw;
     Firebase mRef;
     FirebaseListAdapter<String> fireAdapter;
@@ -40,28 +41,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void populateView(View view, String s, int i) {
                 TextView text = (TextView)view.findViewById(android.R.id.text1);
-                text.setText(s);
+                text.setText(s + i);
             }
         };
+        alert1 = new AlertDialog.Builder(this);
         alert = new AlertDialog.Builder(this);
         tw = (TextView) findViewById(R.id.textView);
         lv.setAdapter(fireAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                alert.setTitle("Are you want to delete this item?");
+                alert1.setTitle("Are you want to delete this item?");
 
-                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                alert1.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         Firebase tmp = fireAdapter.getRef(position);
                         tmp.removeValue();
                     }
                 });
 
-                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                alert1.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                     }
                 });
-                alert.show();
+                alert1.show();
             }
         });
     }
