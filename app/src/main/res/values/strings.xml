@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JustDoIt_APP</string>
+    <string name="app_name">Todo list</string>
     <string name="add_item_message">Add element to list</string>
     <string name="add_yes_buttom">Enter</string>
     <string name="add_no_buttom">Cancel</string>

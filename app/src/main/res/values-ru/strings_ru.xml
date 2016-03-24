@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">JustDoIt_APP</string>
+    <string name="app_name">Список дел</string>
     <string name="add_item_message">Добавить элемент в список</string>
     <string name="add_yes_buttom">Ввод</string>
     <string name="add_no_buttom">Отмена</string>
